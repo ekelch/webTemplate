@@ -1,39 +1,49 @@
 <script lang="ts">
-	let {children} = $props();
+	let { children } = $props();
 </script>
 
-<nav>
-	<a href="/">home</a>
-	<a href="/about">about</a>
+<nav id="nav-outer">
+	<div id="nav-inner">
+		<a href="/">Home</a>
+		<a href="/about">About</a>
+	</div>
 </nav>
 
 {@render children()}
 
 <style lang="css">
-		:global(body) {
-				margin: 0;
-		}
+    :global(body) {
+        margin: 0;
+        font-family: "Palatino Linotype", serif;
+        font-size: 16px;
+				background: #DBD3C9;
+    }
 
-	nav {
-			width: 100%;
-			height: 40px;
-			background: darkgreen;
+    #nav-outer {
+				display: flex;
+    }
 
-			display: flex;
-			gap: 8px;
-			margin: 0;
-			padding: 0;
-	}
+    #nav-inner {
+        height: 40px;
 
-	nav a {
-			margin: 6px 0;
-			padding: 0 12px;
-			align-content: center;
-			border-radius: 4px;
-			text-decoration: none;
-	}
+        display: flex;
+        gap: 12px;
+        margin: 12px auto 16px;
+        padding: 0;
+    }
 
-	nav a:hover {
-			background: darkgrey;
-	}
+
+    #nav-inner a {
+        padding: 0 16px;
+        align-content: center;
+        text-decoration: none;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+
+
+    }
+
+    #nav-inner a:hover {
+        background: rgba(0, 0, 0, 0.08);
+    }
 </style>
